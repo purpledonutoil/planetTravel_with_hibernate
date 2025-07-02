@@ -1,0 +1,25 @@
+package client;
+
+public class ClientService {
+    private ClientDao clientDao;
+
+    public ClientService(ClientDao dao) {
+        clientDao = dao;
+    }
+
+    public void saveClient(Client client) {
+        clientDao.save(client);
+    }
+
+    public Client findClientById(Long id) {
+        return clientDao.findById(id);
+    }
+
+    public void updateClient(Client client) {
+        clientDao.update(client);
+    }
+
+    public void deleteClient(Client client) {
+        clientDao.delete(client);
+    }
+}
