@@ -30,7 +30,7 @@ public class ClientService {
         if (client == null) {
             throw new IllegalArgumentException();
         }
-        if (client.getName() == null || client.getName().isBlank()) {
+        if (client.getName() == null || client.getName().isBlank() || client.getName().length()>200) {
             throw new IllegalArgumentException();
         }
     }
