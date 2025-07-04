@@ -1,6 +1,5 @@
 package planet;
 
-import client.Client;
 
 public class PlanetService {
     private PlanetDao planetDao;
@@ -32,10 +31,10 @@ public class PlanetService {
         if (planet == null) {
             throw new IllegalArgumentException();
         }
-        if (planet.getName() == null || planet.getName().isBlank() || planet.getName().length()>500) {
+        if (planet.getName() == null || planet.getName().isBlank() || planet.getName().length() > 500) {
             throw new IllegalArgumentException();
         }
-        if (planet.getId() == null || planet.getId().isBlank() || planet.getId().length()>3) {
+        if (planet.getId() == null || planet.getId().isBlank() || planet.getId().length() > 3) {
             throw new IllegalArgumentException();
         }
     }
