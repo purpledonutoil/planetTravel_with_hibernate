@@ -4,10 +4,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "planet")
-@Data
+@Setter
+@Getter
 public class Planet {
     @Column(name = "name", length = 3)
     private String id;

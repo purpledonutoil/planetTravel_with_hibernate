@@ -8,6 +8,7 @@ public class ClientService {
     }
 
     public void saveClient(Client client) {
+        validateClient(client);
         clientDao.save(client);
     }
 
@@ -16,10 +17,21 @@ public class ClientService {
     }
 
     public void updateClient(Client client) {
+        validateClient(client);
         clientDao.update(client);
     }
 
     public void deleteClient(Client client) {
+        validateClient(client);
         clientDao.delete(client);
+    }
+
+    private void validateClient(Client client) {
+        if (client == null) {
+            throw new IllegalArgumentException();
+        }
+        if (client.getName() == null || client.getName().isBlank()) {
+            throw new IllegalArgumentException();
+        }
     }
 }
